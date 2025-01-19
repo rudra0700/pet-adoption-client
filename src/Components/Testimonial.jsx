@@ -13,7 +13,7 @@ import { FaQuoteRight } from "react-icons/fa";
 
 const Testimonial = () => {
     return (
-        <div className='mt-20'>
+        <div className='mt-20 px-4'>
                  <h5 className="text-lg font-semibold text-center">--Testimonial</h5>
                  <h3 className='text-3xl font-bold ml-2 uppercase text-center'>WHAT PEOPLE SAYS ABOUT US</h3>
                  <Swiper

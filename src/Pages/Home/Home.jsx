@@ -5,6 +5,7 @@ import CallToAction from '../../Components/CallToAction';
 import AboutUs from '../../Components/AboutUs';
 import Achievements from '../../Components/Achievements';
 import Testimonial from '../../Components/Testimonial';
+import Footer from '../../Components/Footer';
 
 
 const Home = () => {
@@ -26,6 +27,10 @@ const Home = () => {
                </div>
                 <div className='max-w-7xl mx-auto'>
                  <Testimonial></Testimonial>
+               </div>
+               <div className='max-w-full'>
+
+               <Footer></Footer>
                </div>
         </div>
     );
