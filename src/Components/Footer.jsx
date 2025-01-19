@@ -7,9 +7,9 @@ const Footer = () => {
   <aside>
      {/* <img src={petLogo} className='' alt="" /> */}
     <p>
-      ACME Industries Ltd.
+      Pet House Ltd.
       <br />
-      Providing reliable tech since 1992
+      Providing reliable tech since 2025
     </p>
   </aside>
   <nav>
@@ -51,6 +51,7 @@ const Footer = () => {
     </div>
   </nav>
 </footer>
+  <p className='text-center bg-[#2B3440] text-white'>Copyright © {new Date().getFullYear()} - All right reserved by Rudra Barua</p>
         </div>
     );
 };
