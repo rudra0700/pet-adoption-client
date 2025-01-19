@@ -2,6 +2,7 @@ import Navbar from '../../Components/Navbar';
 import Banner from '../../Components/Banner';
 import ChooseCategory from '../../Components/ChooseCategory';
 import CallToAction from '../../Components/CallToAction';
+import AboutUs from '../../Components/AboutUs';
 
 const Home = () => {
     return (
@@ -14,6 +15,9 @@ const Home = () => {
               <div className='max-w-7xl mx-auto'>
                   <CallToAction></CallToAction>
               </div>
+               <div className='max-w-7xl mx-auto'>
+                  <AboutUs></AboutUs>
+               </div>
         </div>
     );
 };
