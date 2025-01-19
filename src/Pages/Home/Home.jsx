@@ -11,7 +11,7 @@ import Footer from '../../Components/Footer';
 const Home = () => {
     return (
         <div className='container mx-auto'>
-             <Navbar></Navbar>
+             {/* <Navbar></Navbar> */}
              <Banner></Banner>
               <div className='max-w-7xl mx-auto'>
                  <ChooseCategory></ChooseCategory>

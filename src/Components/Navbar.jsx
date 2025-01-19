@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import petlogo from '../../public/pet logo.jpg'
+import petlogo from '/public/pet logo.jpg'
 import { RiLogoutBoxLine } from "react-icons/ri";
 
 const Navbar = () => {
