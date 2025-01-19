@@ -2,7 +2,7 @@ import React from 'react';
 
 const AboutUs = () => {
     return (
-        <div className='mt-10 flex flex-col md:flex-row justify-between items-center px-4 gap-4'>
+        <div className='mt-20 flex flex-col md:flex-row justify-between items-center px-4 gap-4'>
             <div className='w-full md:w-[50%] space-y-5'>
                 <h5 className="text-lg font-semibold">--Our Work</h5>
                 <h3 className='text-3xl font-bold ml-2 uppercase'>OUR MAIN GOAL IS TOPROTECT ANIMALS</h3>
