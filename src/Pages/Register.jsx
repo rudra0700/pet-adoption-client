@@ -5,16 +5,42 @@ import { Helmet } from 'react-helmet';
 import Lottie from 'lottie-react';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import useAuth from '../Hooks/useAuth';
+import { toast } from 'react-toastify';
+import useAxiosPublic from '../Hooks/useAxiosPublic';
+import useAxiosSecure from '../Hooks/useAxiosSecure';
 
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`
 const Register = () => {
+     const {createUser, updateProfileUser} = useAuth();
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = (data) => {
+    const axiosPublic = useAxiosPublic();
+    const axiosSecure = useAxiosSecure()
+    const onSubmit = async (data) => {
         console.log(data);
+        const imageFile = {image: data.image[0]}
+         try {
+            const res = await axiosPublic.post(image_hosting_api, imageFile, {
+                headers: {
+                    'content-type': 'multipart/form-data'
+                }
+            })
+            console.log(res.data);
+            const userInfo = {
+                name: data?.name,
+                email: data?.email
+            }
+            await createUser(data.email, data.password);
+            await updateProfileUser(data.name, res.data?.data?.display_url);
+            const userRes = await axiosPublic.post('/users', userInfo);
+            toast.success("Registered successfully")
+         } catch (error) {
+            console.log(error);
+         }
     };
     
-    console.log(watch("example")); 
+    // console.log(watch("example")); 
 
     return (
       <div className='hero min-h-screen'>

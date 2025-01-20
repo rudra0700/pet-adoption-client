@@ -6,6 +6,19 @@ import { Link } from "react-router-dom";
 
 
 const Login = () => {
+
+    const handleLogin = async (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        try {
+            await loginUser(email, password);
+            toast.success("Login Successful");
+        } catch (error) {
+            toast.error(error?.message)
+        }
+    }
     return (
         <div className="hero min-h-screen">
         <Helmet>
