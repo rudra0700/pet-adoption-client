@@ -3,7 +3,7 @@ import registerLottie from '../../public/register.json'
 import googleLogo from '/public/google login logo.png'
 import { Helmet } from 'react-helmet';
 import Lottie from 'lottie-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import useAuth from '../Hooks/useAuth';
 import { toast } from 'react-toastify';
@@ -13,10 +13,10 @@ import useAxiosSecure from '../Hooks/useAxiosSecure';
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`
 const Register = () => {
-     const {createUser, updateProfileUser} = useAuth();
+     const {createUser, updateProfileUser, googleSignIn} = useAuth();
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const axiosPublic = useAxiosPublic();
-    const axiosSecure = useAxiosSecure()
+    const navigate = useNavigate()
     const onSubmit = async (data) => {
         console.log(data);
         const imageFile = {image: data.image[0]}
@@ -34,6 +34,7 @@ const Register = () => {
             await createUser(data.email, data.password);
             await updateProfileUser(data.name, res.data?.data?.display_url);
             const userRes = await axiosPublic.post('/users', userInfo);
+            navigate('/')
             toast.success("Registered successfully")
          } catch (error) {
             console.log(error);
@@ -41,6 +42,24 @@ const Register = () => {
     };
     
     // console.log(watch("example")); 
+
+    const handleGoogleSignIn =  () => {
+       googleSignIn()
+       .then(res => {
+           const userInfo = {
+              name: res.user?.displayName,
+              email: res.user?.email
+           }
+           axiosPublic.post('/users', userInfo)
+           .then(() => {
+                toast.success("SignIn successfully");
+                navigate('/')
+           })
+            .catch(error => {
+                toast.error(error.response.data.message);
+            })
+       })
+    }
 
     return (
       <div className='hero min-h-screen'>
@@ -52,7 +71,7 @@ const Register = () => {
                     <Lottie animationData={registerLottie}></Lottie>
                 </div>
                 <div className="card bg-base-100 w-full lg:max-w-sm shrink-0 shadow-2xl">
-                    <div className='flex items-center gap-8 mt-2 md:gap-24 lg:gap-14  border border-gray-200 p-1 rounded-md mr-8 ml-8'>
+                    <div onClick={handleGoogleSignIn} className='flex items-center gap-8 mt-2 md:gap-24 lg:gap-14  border border-gray-200 p-1 rounded-md mr-8 ml-8'>
                             <img src={googleLogo} className='w-10' alt="google logo" />
                             <p className='font-medium text-gray-600'>Sign in with Google</p>
                     </div>

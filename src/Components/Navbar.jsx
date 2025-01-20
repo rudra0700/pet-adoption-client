@@ -1,8 +1,20 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import petlogo from '/public/pet logo.jpg'
 import { RiLogoutBoxLine } from "react-icons/ri";
+import useAuth from '../Hooks/useAuth';
+import { toast } from 'react-toastify';
 
 const Navbar = () => {
+  const {user, logoutUser} = useAuth();
+  const navigate = useNavigate()
+   
+  const handleLogout = () => {
+      logoutUser()
+      .then(() => {
+          toast.success("Logout Successfully")
+          navigate('/login')
+      })
+  }
     return (
         <div>
              <div className="navbar bg-base-100">
@@ -55,15 +67,16 @@ const Navbar = () => {
       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
         <div className="w-10 rounded-full">
           <img
-            alt="Tailwind CSS Navbar component"
-            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+             title={user?.displayName}
+            alt="user image"
+            src={user?.photoURL} />
         </div>
       </div>
       <ul
         tabIndex={0}
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow space-y-3 font-semibold">
          <Link><li>Dashboard</li></Link>
-         <Link className='flex items-center space-x-2'><li>Logout</li><RiLogoutBoxLine /></Link>
+         <Link onClick={handleLogout} className='flex items-center space-x-2'><li>Logout</li><RiLogoutBoxLine /></Link>
       </ul>
     </div>
   </div>
