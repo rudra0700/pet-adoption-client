@@ -3,6 +3,9 @@ import MainLayout from "../Layout/MainLayout";
 import Home from "../Pages/Home/Home";
 import Register from "../Pages/Register";
 import Login from "../Pages/Login";
+import Dashboard from "../Layout/Dashboard";
+import AddPet from "../Pages/Dashboard/AddPet";
+import AllPets from "../Pages/AllPets/AllPets";
 
 const routes = createBrowserRouter([
     {
@@ -20,6 +23,20 @@ const routes = createBrowserRouter([
             {
                 path: '/login',
                 element: <Login></Login>
+            },
+            {
+                path: '/allPets',
+                element: <AllPets></AllPets>
+            }
+        ]
+    },
+    {
+        path: '/dashboard',
+        element: <Dashboard></Dashboard>,
+        children: [
+            {
+                path: 'addPet',
+                element: <AddPet></AddPet>
             }
         ]
     }

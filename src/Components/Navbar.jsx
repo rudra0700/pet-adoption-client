@@ -56,14 +56,15 @@ const Navbar = () => {
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1 space-x-4 font-semibold text-lg">
        <Link><li>Home</li></Link>
-       <Link><li>All Pets</li></Link>
+       <Link to={'/allPets'}><li>All Pets</li></Link>
        <Link><li>Campaigns</li></Link>
     </ul>
   </div>
   <div className="navbar-end">
       {/* image */}
-        <Link to={'/login'} className='mr-3 font-semibold text-lg'>Login</Link>
-      <div className="dropdown dropdown-end">
+        {!user && <Link to={'/login'} className='mr-3 font-semibold text-lg'>Login</Link>}
+        {/* <Link to={'/login'} className='mr-3 font-semibold text-lg'>Login</Link> */}
+         {user &&   <div className="dropdown dropdown-end">
       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
         <div className="w-10 rounded-full">
           <img
@@ -75,10 +76,11 @@ const Navbar = () => {
       <ul
         tabIndex={0}
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow space-y-3 font-semibold">
-         <Link><li>Dashboard</li></Link>
+         <Link to={'/dashboard'}><li>Dashboard</li></Link>
          <Link onClick={handleLogout} className='flex items-center space-x-2'><li>Logout</li><RiLogoutBoxLine /></Link>
       </ul>
-    </div>
+    </div>}
+    
   </div>
 </div>
         </div>
