@@ -24,7 +24,7 @@ const PetDetails = () => {
         }
      })
 
-     const {category, deadline, image, longDesc, ownerImg, ownerEmail, ownerLocation, ownerName, petAge, petName, _id} = pet;
+     const {category, deadline, image, longDesc, ownerImg, ownerEmail, ownerLocation, ownerName, petAge, petName, _id} = pet || {};
 
      const closeModal = () => {
        closeModal()
@@ -43,22 +43,22 @@ const PetDetails = () => {
             petAge: petAge,
             category: category,
             image: image,
-            status: "Pending"
         }
 
      const handleAdoption = async () => {
         try {
             // save adoption req in db
             await axiosSecure.post('/adopt', adoptInfo);
-            await axiosSecure.delete(`/pets/${_id}`)
+            // await axiosSecure.patch('/pet' )
+            // await axiosSecure.delete(`/pets/${_id}`)
             navigate('/allPets');
-            toast.success("Adoption request send successfully")
+            toast.success("Adopted successfully")
         } catch (error) {
            console.log(error); 
         }
      }
 
-     
+    //  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae sequi, odit dolorum sint quos aperiam iusto similique ipsum fugiat itaque dolorem sit ducimus. Repellendus nihil nisi ipsam! Alias rerum at adipisci itaque totam fuga quaerat voluptate eaque excepturi? Tempore, aliquid?
     return (
         <div className="max-w-6xl mx-auto my-8">
              <div className="card lg:card-side bg-base-100 shadow-xl flex">

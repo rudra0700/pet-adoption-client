@@ -8,7 +8,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
-const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`
+const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 const AddPet = () => {
     const [startDate, setStartDate] = useState(new Date())
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
@@ -37,7 +37,8 @@ const AddPet = () => {
                 ownerEmail: user?.email,
                 ownerImg: user?.photoURL,
                 ownerName:user?.displayName,
-                deadline: startDate
+                deadline: startDate,
+                adopted: false
             }
             console.log(petInfo);
             await axiosSecure.post('/pets', petInfo);

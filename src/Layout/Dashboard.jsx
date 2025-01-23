@@ -9,7 +9,7 @@ const Dashboard = () => {
                 <ul className="menu space-y-2">
                     <li className="bg-blue-500"><NavLink to={'/'}>Home</NavLink></li>
                     <li><NavLink to={'/dashboard/addPet'}>Add a Pet</NavLink></li>
-                    <li><NavLink>My Added Pets</NavLink></li>
+                    <li><NavLink to={'/dashboard/myAddedPets'}>My Added Pets</NavLink></li>
                     <li><NavLink>Create campaigns</NavLink></li>
                     <li><NavLink>My campaigns</NavLink></li>
                 </ul>

@@ -7,6 +7,8 @@ import Dashboard from "../Layout/Dashboard";
 import AddPet from "../Pages/Dashboard/AddPet";
 import AllPets from "../Pages/AllPets/AllPets";
 import PetDetails from "../Pages/PetDetails/PetDetails";
+import MyAddedPets from "../Pages/MyAddedPets/MyAddedPets";
+import UpdatePet from "../Pages/UpdatePet/UpdatePet";
 
 const routes = createBrowserRouter([
     {
@@ -42,6 +44,14 @@ const routes = createBrowserRouter([
             {
                 path: 'addPet',
                 element: <AddPet></AddPet>
+            },
+            {
+                path: 'myAddedPets',
+                element: <MyAddedPets></MyAddedPets>
+            },
+            {
+                path: 'updatePet/:id',
+                element: <UpdatePet></UpdatePet>
             }
         ]
     }
