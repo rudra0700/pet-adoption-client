@@ -63,7 +63,7 @@ const UpdatePet = () => {
     return (
         <div className="border border-black">
             <h3 className="text-3xl font-bold text-center">Want to Update?</h3>
-                <form onSubmit={handleSubmit(onSubmit)}>
+                <form onSubmit={handleSubmit(onSubmit)} className="mt-5">
                                 <div className="flex gap-4">
                                      <div className="form-control w-full">
                                          <label className="label">

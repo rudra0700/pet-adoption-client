@@ -19,14 +19,60 @@ const MyAddedPets = () => {
     })
 
   
-    const handleUpdate = (id) => {
-        
+    const handleDelete = (id) => {
+      Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+      }).then(async (result) => {
+        if (result.isConfirmed) {
+          try {
+            await axiosSecure.delete(`/pets/${id}`)
+            refetch()
+               Swal.fire({
+            title: "Deleted!",
+            text: "Your file has been deleted.",
+            icon: "success"
+          });
+            
+          } catch (error) {
+            console.log(error);
+          }
+       
+        }
+      });
+    }
+
+    const handleAdopt = (id) => {
+      Swal.fire({
+        title: "Are you sure to change status?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, change it!"
+      }).then(async (result) => {
+        if (result.isConfirmed) {
+             await axiosSecure.patch(`/pet/${id}`, {adopted: true});
+             refetch();
+          Swal.fire({
+            title: "Changed!",
+            text: "Status has been deleted.",
+            icon: "success"
+          });
+        }
+      });
     }
 
     return (
-        <div className="border border-black p-8">
+        <div className="p-8">
             <h3 className="text-3xl font-bold text-center">My Added Pets</h3>
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto mt-4">
   <table className="table">
     {/* head */}
     <thead>
@@ -35,6 +81,7 @@ const MyAddedPets = () => {
         <th>Name</th>
         <th>Category</th>
         <th>Status</th>
+        <th>Action</th>
         <th>Action</th>
       </tr>
     </thead>
@@ -69,6 +116,9 @@ const MyAddedPets = () => {
                     <Link to={`/dashboard/updatePet/${pet?._id}`}><FaRegEdit className="text-2xl"/></Link>
                     
                     <MdOutlineDelete className="text-2xl" onClick={() => handleDelete(pet?._id)} />
+                </td> 
+                <td>
+                   <div className="badge badge-secondary badge-outline" onClick={() => handleAdopt(pet?._id)}>Adopt</div>
                 </td>
               </tr>)
          }

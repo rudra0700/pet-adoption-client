@@ -10,7 +10,7 @@ const Dashboard = () => {
                     <li className="bg-blue-500"><NavLink to={'/'}>Home</NavLink></li>
                     <li><NavLink to={'/dashboard/addPet'}>Add a Pet</NavLink></li>
                     <li><NavLink to={'/dashboard/myAddedPets'}>My Added Pets</NavLink></li>
-                    <li><NavLink>Create campaigns</NavLink></li>
+                    <li><NavLink to={'/dashboard/createCampaign'}>Create campaigns</NavLink></li>
                     <li><NavLink>My campaigns</NavLink></li>
                 </ul>
              </div>
