@@ -45,11 +45,7 @@ const AddPet = () => {
         } catch (error) {
             console.log(error);
         }
-
-       
-       
       }
-
 
     return (
         <div className="px-8">

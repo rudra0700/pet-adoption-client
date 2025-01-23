@@ -1,7 +1,8 @@
 
 import {format} from 'date-fns'
+import { Link } from 'react-router-dom';
 const PetCard = ({pet}) => {
-    const {petName, petAge, category, image, shortDesc, deadline, ownerImg, ownerName, _id} = pet;
+    const {petName, petAge, category, image, shortDesc, deadline, ownerImg, ownerName, _id} = pet || {};
     return (
         <div className="">
            <div className="card bg-base-100 shadow-xl">
@@ -29,6 +30,7 @@ const PetCard = ({pet}) => {
                  </div>
                  <p className="">Description: {shortDesc}</p>
                 <div className="card-actions justify-end">
+                   <Link className="badge badge-outline" to={`/petDetails/${_id}`}>View Details</Link>
                 </div>
             </div>
             </div>

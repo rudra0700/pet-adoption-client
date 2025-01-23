@@ -6,6 +6,7 @@ import Login from "../Pages/Login";
 import Dashboard from "../Layout/Dashboard";
 import AddPet from "../Pages/Dashboard/AddPet";
 import AllPets from "../Pages/AllPets/AllPets";
+import PetDetails from "../Pages/PetDetails/PetDetails";
 
 const routes = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ const routes = createBrowserRouter([
             {
                 path: '/allPets',
                 element: <AllPets></AllPets>
+            },
+            {
+                path: '/petDetails/:id',
+                element: <PetDetails></PetDetails>
             }
         ]
     },
