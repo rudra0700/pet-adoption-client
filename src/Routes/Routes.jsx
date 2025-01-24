@@ -10,6 +10,8 @@ import PetDetails from "../Pages/PetDetails/PetDetails";
 import MyAddedPets from "../Pages/MyAddedPets/MyAddedPets";
 import UpdatePet from "../Pages/UpdatePet/UpdatePet";
 import CreateCampaign from "../Pages/CreateCampaign/CreateCampaign";
+import MyCampaigns from "../Pages/MyCampaigns/MyCampaigns";
+import UpdateCampaign from "../Pages/UpdateCampaign/UpdateCampaign";
 
 const routes = createBrowserRouter([
     {
@@ -57,7 +59,16 @@ const routes = createBrowserRouter([
             {
                 path: 'createCampaign',
                 element: <CreateCampaign></CreateCampaign>
+            },
+            {
+                path: 'myCampaigns',
+                element: <MyCampaigns></MyCampaigns>
+            },
+            {
+                path: 'updateCampaign/:id',
+                element: <UpdateCampaign></UpdateCampaign>
             }
+
         ]
     }
 ]);

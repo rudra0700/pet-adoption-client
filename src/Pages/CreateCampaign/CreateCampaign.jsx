@@ -24,6 +24,7 @@ const CreateCampaign = () => {
             })
             console.log(res.data);
             const campaignInfo = {
+                petName: data?.name,
                 image: res.data?.data?.display_url,
                 maxAmount: parseFloat(data?.amount),
                 deadline: startDate,
@@ -43,20 +44,21 @@ const CreateCampaign = () => {
     return (
         <div className="border border-black">
             <h3 className="text-3xl font-bold text-center">Create Campaigns</h3>
-             <form onSubmit={handleSubmit(onSubmit)}>
+             <form onSubmit={handleSubmit(onSubmit)} className="mt-4">
              <div className="flex gap-4">
                         <div className="form-control w-full">
+                            <label className="label">
+                                <span className="label-text">Pet Name</span>
+                            </label>
+                            <input type="text" placeholder="name" {...register('name', { required: true })}  className="input input-bordered" required/>
+                        </div>  
+                         <div className="form-control w-full">
                             <label className="label">
                                 <span className="label-text">Pet image</span>
                             </label>
                             <input type="file" placeholder="image" {...register('image', { required: true })}  className="input border-none outline-none" required/>
                         </div>  
-                          <div className="form-control w-full">
-                            <label className="label">
-                                <span className="label-text">Maximum amount</span>
-                            </label>
-                            <input type="number" placeholder="amount" {...register('amount', { required: true })}  className="input input-bordered" required/>
-                        </div>
+                      
                    </div>    
                     <div className="flex gap-4">
                         <div className="form-control w-full">
@@ -65,13 +67,21 @@ const CreateCampaign = () => {
                             </label>
                               <DatePicker  className='border p-2 rounded-md w-full' selected={startDate} onChange={(date) => setStartDate(date)} />
                         </div>  
-                          <div className="form-control w-full">
+                        <div className="form-control w-full">
+                            <label className="label">
+                                <span className="label-text">Maximum amount</span>
+                            </label>
+                            <input type="number" placeholder="amount" {...register('amount', { required: true })}  className="input input-bordered" required/>
+                        </div>
+                       
+                   </div>  
+
+                   <div className="form-control w-full">
                             <label className="label">
                                 <span className="label-text">Short Description</span>
                             </label>
                             <input type="text" placeholder="write your thought" {...register('shortDesc', { required: true })}  className="input input-bordered" required/>
                         </div>
-                   </div>  
 
                    <div className="form-control w-full">
                             <label className="label">
