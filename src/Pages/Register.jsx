@@ -29,7 +29,8 @@ const Register = () => {
             console.log(res.data);
             const userInfo = {
                 name: data?.name,
-                email: data?.email
+                email: data?.email,
+                userImg: res.data?.data?.display_url
             }
             await createUser(data.email, data.password);
             await updateProfileUser(data.name, res.data?.data?.display_url);

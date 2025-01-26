@@ -14,6 +14,8 @@ import MyCampaigns from "../Pages/MyCampaigns/MyCampaigns";
 import UpdateCampaign from "../Pages/UpdateCampaign/UpdateCampaign";
 import AllCampaigns from "../Pages/AllCampaigns/AllCampaigns";
 import DonationDetails from "../Pages/DonationDetails/DonationDetails";
+import MyDonation from "../Pages/MyDonation/MyDonation";
+import AllUsers from "../Pages/AllUsers/AllUsers";
 
 const routes = createBrowserRouter([
     {
@@ -78,6 +80,14 @@ const routes = createBrowserRouter([
                 path: 'updateCampaign/:id',
                 element: <UpdateCampaign></UpdateCampaign>
             },
+            {
+                path: 'myDonation',
+                element: <MyDonation></MyDonation>
+            },
+            {
+                path: 'allUsers',
+                element: <AllUsers></AllUsers>
+            }
         ]
     }
 ]);

@@ -65,6 +65,8 @@ const CheckoutForm = ({campaignInfo, refetch, maxAmount}) => {
               }
             }
           })
+
+   
   
           if(paymentIntent?.status === 'succeeded'){
              try {

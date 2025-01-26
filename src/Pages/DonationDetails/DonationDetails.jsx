@@ -30,6 +30,8 @@ const DonationDetails = () => {
         donoarName: user?.displayName,
         donorImage: user?.photoURL,
         campaign_Id: _id,
+        petName: petName,
+        image: image,
         donatedAmount : amount,
         campaignOwnerEmail: campaignOwnerEmail
 
