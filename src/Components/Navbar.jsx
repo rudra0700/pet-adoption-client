@@ -57,7 +57,7 @@ const Navbar = () => {
     <ul className="menu menu-horizontal px-1 space-x-4 font-semibold text-lg">
        <Link><li>Home</li></Link>
        <Link to={'/allPets'}><li>All Pets</li></Link>
-       <Link><li>Campaigns</li></Link>
+       <Link to={'/allCampaigns'}><li>Campaigns</li></Link>
     </ul>
   </div>
   <div className="navbar-end">
