@@ -16,6 +16,8 @@ import AllCampaigns from "../Pages/AllCampaigns/AllCampaigns";
 import DonationDetails from "../Pages/DonationDetails/DonationDetails";
 import MyDonation from "../Pages/MyDonation/MyDonation";
 import AllUsers from "../Pages/AllUsers/AllUsers";
+import AdminRoute from "./AdminRoute";
+import PrivateRoute from "./PrivateRoute";
 
 const routes = createBrowserRouter([
     {
@@ -54,7 +56,7 @@ const routes = createBrowserRouter([
     },
     {
         path: '/dashboard',
-        element: <Dashboard></Dashboard>,
+        element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
         children: [
             {
                 path: 'addPet',
@@ -86,7 +88,7 @@ const routes = createBrowserRouter([
             },
             {
                 path: 'allUsers',
-                element: <AllUsers></AllUsers>
+                element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
             }
         ]
     }

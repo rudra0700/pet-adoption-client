@@ -1,8 +1,10 @@
 import { NavLink, Outlet } from "react-router-dom";
+import useAdmin from "../Hooks/useAdmin";
 
 
 const Dashboard = () => {
-     const isAdmin = true;
+     const [isAdmin, isLoading] = useAdmin();
+     if(isLoading) return <p>Loading...</p>
     return (
         <div className="flex gap-6">
              {/* dashboard sidebar */}

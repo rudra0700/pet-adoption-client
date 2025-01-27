@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import Swal from "sweetalert2";
 
 
 const AllUsers = () => {
@@ -13,6 +14,33 @@ const AllUsers = () => {
     })
 
     console.log(users);
+    const handleMakeAdmin = (id) => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, make admin!"
+          }).then(async (result) => {
+            if (result.isConfirmed) {
+                try {
+                    await axiosSecure.patch(`/user/admin/${id}`, {role: "admin"});
+                    refetch()
+                 Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success"
+              });
+                    
+                } catch (error) {
+                    console.log(error);
+                }
+            
+            }
+          });
+    }
     return (
         <div>
             <h3 className="text-3xl font-bold text-center">All User</h3>
@@ -27,6 +55,7 @@ const AllUsers = () => {
         <th>Image</th>
         <th>Name</th>
         <th>Favorite Color</th>
+        <th>Role</th>
         <th>Action</th>
       </tr>
     </thead>
@@ -51,19 +80,16 @@ const AllUsers = () => {
             </td>
             <td>
               {user?.name}
-               
             </td>
             <td>{user?.email}</td>
+            <td>
+                {user?.role}
+            </td>
             <th>
-            <div className="badge badge-secondary badge-outline font-thin">Make Admin</div>
+               <div className="badge badge-secondary badge-outline font-thin" onClick={() => handleMakeAdmin(user?._id)}>Make Admin</div>
             </th>
           </tr>)
         }
- 
-     
-  
- 
-   
     </tbody>
  
   </table>
