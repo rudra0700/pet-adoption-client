@@ -12,10 +12,9 @@ const Banner = () => {
   <div className="hero-content text-neutral-content text-center">
     <div className="max-w-md">
       <h1 className="mb-5 text-3xl md:text-5xl font-bold ">Your Puppy's Second Home</h1>
-      <p className="mb-5">
+      <p className="mb-5 opacity-100 font-semibold">
       "Find loving homes for your furry friends. Adopt, don’t shop, and give every puppy the care they deserve today!"
       </p>
-      <button className="btn btn-primary">Get Started</button>
     </div>
   </div>
 </div>

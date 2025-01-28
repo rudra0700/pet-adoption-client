@@ -28,11 +28,11 @@ const Testimonial = () => {
         <SwiperSlide>
             <div>
                 <FaQuoteRight className='mx-auto mt-10 text-5xl'></FaQuoteRight>
-                <p className='text-center text-lg'>"Amazing experience! The adoption process was smooth, and the team was incredibly supportive. Thanks to them, we <br /> found our perfect furry companion!"</p>
+                <p className='text-center text-lg opacity-70 font-semibold'>"Amazing experience! The adoption process was smooth, and the team was incredibly supportive. Thanks to them, we <br /> found our perfect furry companion!"</p>
                 <div className='flex gap-2 justify-center mt-8 items-center'>
                         <div className="avatar">
                             <div className="w-16 rounded-full">
-                               <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                               <img src="https://i.ibb.co.com/qWJ8653/aliza-victor.jpg" />
                             </div>
                         </div>
                      <div>
@@ -44,7 +44,7 @@ const Testimonial = () => {
         </SwiperSlide>  <SwiperSlide>
             <div>
                 <FaQuoteRight className='mx-auto mt-10 text-5xl'></FaQuoteRight>
-                <p className='text-center text-lg'>"A wonderful service! They truly care about the pets and ensure they find the right home. Highly <br />recommend their adoption platform."</p>
+                <p className='text-center text-lg opacity-70 font-semibold'>"A wonderful service! They truly care about the pets and ensure they find the right home. Highly <br />recommend their adoption platform."</p>
                 <div className='flex gap-2 justify-center mt-8 items-center'>
                         <div className="avatar">
                             <div className="w-16 rounded-full">
@@ -60,7 +60,7 @@ const Testimonial = () => {
         </SwiperSlide>  <SwiperSlide>
             <div>
                 <FaQuoteRight className='mx-auto mt-10 text-5xl'></FaQuoteRight>
-                <p className='text-center text-lg'>"Such a heartfelt mission! Their dedication to pets' well-being shines through every step of the adoption <br /> process. We couldn’t be happier!"</p>
+                <p className='text-center text-lg opacity-70 font-semibold'>"Such a heartfelt mission! Their dedication to pets' well-being shines through every step of the adoption <br /> process. We couldn’t be happier!"</p>
                 <div className='flex gap-2 justify-center mt-8 items-center'>
                         <div className="avatar">
                             <div className="w-16 rounded-full">
@@ -76,7 +76,7 @@ const Testimonial = () => {
         </SwiperSlide>  <SwiperSlide>
             <div>
                 <FaQuoteRight className='mx-auto mt-10 text-5xl'></FaQuoteRight>
-                <p className='text-center text-lg'>"Incredible team and excellent service. They made the adoption process easy and guided us to <br /> provide the best care for our new pet!"</p>
+                <p className='text-center text-lg opacity-70 font-semibold'>"Incredible team and excellent service. They made the adoption process easy and guided us to <br /> provide the best care for our new pet!"</p>
                 <div className='flex gap-2 justify-center mt-8 items-center'>
                         <div className="avatar">
                             <div className="w-16 rounded-full">

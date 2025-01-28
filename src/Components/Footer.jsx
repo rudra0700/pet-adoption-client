@@ -6,7 +6,7 @@ const Footer = () => {
              <footer className="footer bg-neutral text-neutral-content p-10">
   <aside>
      {/* <img src={petLogo} className='' alt="" /> */}
-    <p>
+    <p className='font-semibold'>
       Pet House Ltd.
       <br />
       Providing reliable tech since 2025
@@ -51,7 +51,7 @@ const Footer = () => {
     </div>
   </nav>
 </footer>
-  <p className='text-center bg-[#2B3440] text-white'>Copyright © {new Date().getFullYear()} - All right reserved by Rudra Barua</p>
+  <p className='text-center bg-[#2B3440] text-white pb-3 font-semibold'>Copyright © {new Date().getFullYear()} - All right reserved by Rudra Barua</p>
         </div>
     );
 };

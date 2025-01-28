@@ -70,15 +70,13 @@ const DonationDetails = () => {
                     src={image}
                     alt="Movie" />
                 </figure>
-                <div className="w-[70%] ml-5 mt-5">
+                <div className="w-[70%] ml-5 mt-5 space-y-1">
                     <h2 className="card-title uppercase">{petName}</h2>
-                    <p>We need : $ {maxAmount}</p>
-                    <p>Last Date : {format(new Date(deadline), "P")}</p>
-                    <p>{longDesc}</p>
+                    <p className="font-semibold opacity-70">We need : $ {maxAmount}</p>
+                    <p className="font-semibold opacity-70">Last Date : {format(new Date(deadline), "P")}</p>
+                    <p className="font-semibold opacity-70">{longDesc}</p>
                     <div className="card-actions mt-3">
-                       <button className="btn btn-primary" onClick={()=>document.getElementById('my_modal_1').showModal()}>Want to Donate</button>
-                        {/* Open the modal using document.getElementById('ID').showModal() method */}
-                        {/* <button className="btn" >open modal</button> */}
+                       <button className="btn btn-neutral mt-2" onClick={()=>document.getElementById('my_modal_1').showModal()}>Want to Donate</button>
                         <dialog id="my_modal_1" className="modal text-center">
                         <div className="modal-box">
                         <div className="avatar">
@@ -87,7 +85,7 @@ const DonationDetails = () => {
                             </div>
                         </div>
                             <h3 className="font-bold text-lg">{petName}</h3>
-                            <p className="">Max amount you can donate: $ {maxAmount}</p>
+                            <p className="font-semibold opacity-70">Max amount you can donate: $ {maxAmount}</p>
                             <input value={amount} onChange={(e) => handleAmount(parseInt(e.target.value))} type="number" className='mt-2 border-2' />
                               {/* checkout form */}
                                 <Elements stripe={stripePromise}>

@@ -15,7 +15,7 @@ const CallToAction = () => {
                         </figure>
                         <div className="card-body">
                             <h2 className="card-title">Raising money to help</h2>
-                            <p>"Empowering dog care with love and dedication. Together, we ensure every dog receives the nurturing and happiness they truly deserve."</p>
+                            <p className="opacity-70 font-semibold">"Empowering dog care with love and dedication. Together, we ensure every dog receives the nurturing and happiness they truly deserve."</p>
                             <div className="card-actions justify-end">
                             </div>
                         </div>
@@ -29,7 +29,7 @@ const CallToAction = () => {
                         </figure>
                         <div className="card-body">
                             <h2 className="card-title">Close work with services</h2>
-                            <p>
+                            <p className="opacity-70 font-semibold">
                             "Dedicated to excellence, we work closely with our services, ensuring every dog receives personalized care, compassion, and a loving experience."</p>
                             <div className="card-actions justify-end">
                             </div>
@@ -44,7 +44,7 @@ const CallToAction = () => {
                         </figure>
                         <div className="card-body">
                             <h2 className="card-title">Pro guided tours only</h2>
-                            <p>"Experience safe, memorable tours led by professional guides. Our experts ensure every adventure is enjoyable, educational, and worry-free for all."</p>
+                            <p className="opacity-70 font-semibold">"Experience safe, memorable tours led by professional guides. Our experts ensure every adventure is enjoyable, educational, and worry-free for all."</p>
                             <div className="card-actions justify-end">
                             </div>
                         </div>
@@ -58,7 +58,7 @@ const CallToAction = () => {
                         </figure>
                         <div className="card-body">
                             <h2 className="card-title">Protecting animal area</h2>
-                            <p>"Committed to preserving animal habitats, we actively protect wildlife areas, ensuring a safe and thriving environment for animals to flourish."</p>
+                            <p className="opacity-70 font-semibold">"Committed to preserving animal habitats, we actively protect wildlife areas, ensuring a safe and thriving environment for animals to flourish."</p>
                             <div className="card-actions justify-end">
                             </div>
                         </div>

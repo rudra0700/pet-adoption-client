@@ -51,19 +51,19 @@ const UpdateCampaign = () => {
         const {petName, shortDesc, longDesc, maxAmount, deadline} = campaign || {};
         const [startDate, setStartDate] = useState(deadline);
     return (
-        <div className="border border-black">
+        <div className="px-8">
              <h3 className="text-center font-bold text-3xl">Update Your Campaign</h3>
               <form onSubmit={handleSubmit(onSubmit)} className="mt-4">
                           <div className="flex gap-4">
                                      <div className="form-control w-full">
                                          <label className="label">
-                                             <span className="label-text">Pet Name</span>
+                                             <span className="label-text font-semibold">Pet Name</span>
                                          </label>
                                          <input type="text" defaultValue={petName} placeholder="name" {...register('name', { required: true })}  className="input input-bordered" required/>
                                      </div>  
                                       <div className="form-control w-full">
                                          <label className="label">
-                                             <span className="label-text">Pet image</span>
+                                             <span className="label-text font-semibold">Pet image</span>
                                          </label>
                                          <input type="file" placeholder="image" {...register('image', { required: true })}  className="input border-none outline-none" required/>
                                      </div>  
@@ -72,13 +72,13 @@ const UpdateCampaign = () => {
                                  <div className="flex gap-4">
                                      <div className="form-control w-full">
                                          <label className="label">
-                                             <span className="label-text">Deadline</span>
+                                             <span className="label-text font-semibold">Deadline</span>
                                          </label>
                                            <DatePicker defaultValue={deadline}  className='border p-2 rounded-md w-full' selected={startDate} onChange={(date) => setStartDate(date)} />
                                      </div>  
                                      <div className="form-control w-full">
                                          <label className="label">
-                                             <span className="label-text">Maximum amount</span>
+                                             <span className="label-text font-semibold">Maximum amount</span>
                                          </label>
                                          <input type="number" defaultValue={maxAmount} placeholder="amount" {...register('amount', { required: true })}  className="input input-bordered" required/>
                                      </div>
@@ -87,14 +87,14 @@ const UpdateCampaign = () => {
              
                                 <div className="form-control w-full">
                                          <label className="label">
-                                             <span className="label-text">Short Description</span>
+                                             <span className="label-text font-semibold">Short Description</span>
                                          </label>
                                          <input type="text" defaultValue={shortDesc} placeholder="write your thought" {...register('shortDesc', { required: true })}  className="input input-bordered" required/>
                                      </div>
              
                                 <div className="form-control w-full">
                                          <label className="label">
-                                             <span className="label-text">Description</span>
+                                             <span className="label-text font-semibold">Write Details about your campaign</span>
                                          </label>
                                          <textarea
                                           {...register('longDesc', { required: true })} 

@@ -17,15 +17,13 @@ const CampaignCard = ({campaign}) => {
                 <h2 className="card-title">
                  {petName}
                 </h2>
-                  <p>Maximum Amount: $ {maxAmount}</p>
-                 <p className="mb-0">Deadline: {format(new Date(deadline), "P")}</p>
-                 <div className="flex items-center mt-0">
-               
-                   
-                 </div>
-                 <p className="">{shortDesc}</p>
+                  <p className='font-semibold opacity-70'>Maximum Amount: $ {maxAmount}</p>
+                 <p className="mb-0 font-semibold opacity-70">Deadline: {format(new Date(deadline), "P")}</p>
+                 {/* <div className="flex items-center mt-0">
+                 </div> */}
+                 <p className="font-semibold opacity-70">{shortDesc}</p>
                 <div className="card-actions justify-end">
-                   <Link to={`/donationDetails/${_id}`} className="badge badge-outline">View Details</Link>
+                   <Link to={`/donationDetails/${_id}`} className="badge badge-outline font-semibold opacity-70">View Details</Link>
                 </div>
             </div>
             </div>

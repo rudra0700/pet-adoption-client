@@ -23,7 +23,7 @@ const useAxiosSecure = () => {
         const status = error.response.status;
         if(status === 401 || status === 403){
             await logoutUser()
-           navigate('/login')
+        //    navigate('/login')
         }
         console.log("error caught in interceptors", status);
       return Promise.reject(error)

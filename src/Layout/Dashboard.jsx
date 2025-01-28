@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import useAdmin from "../Hooks/useAdmin";
 
 
@@ -27,8 +27,8 @@ const Dashboard = () => {
       </div>
       <ul
         tabIndex={0}
-        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                     <li className="bg-blue-500"><NavLink to={'/dashboard/adminHome'}>Admin Home</NavLink></li>
+        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow space-y-2">
+                     <li className=""><NavLink to={'/dashboard/adminHome'}>Admin Home</NavLink></li>
                     <li><NavLink to={'/dashboard/addPet'}>Add a Pet</NavLink></li>
                     <li><NavLink to={'/dashboard/myAddedPets'}>My Added Pets</NavLink></li>
                     <li><NavLink to={'/dashboard/createCampaign'}>Create campaigns</NavLink></li>
@@ -43,34 +43,35 @@ const Dashboard = () => {
   </div>
   <div className="navbar-center hidden lg:flex">
   </div>
-  {/* <div className="navbar-end">
-    <a className="btn">Button</a>
-  </div> */}
 </div>
         <div className="flex gap-6">
              {/* dashboard sidebar */}
-             <div className="w-64 min-h-screen bg-orange-300 border hidden md:block ">
+             <div className="w-64 min-h-screen bg-neutral border hidden md:block ">
                 <ul className="menu space-y-2">
                      {
                         isAdmin ? <>
-                             <li className="bg-blue-500"><NavLink to={'/dashboard/adminHome'}>Admin Home</NavLink></li>
-                    <li><NavLink to={'/dashboard/addPet'}>Add a Pet</NavLink></li>
-                    <li><NavLink to={'/dashboard/myAddedPets'}>My Added Pets</NavLink></li>
-                    <li><NavLink to={'/dashboard/createCampaign'}>Create campaigns</NavLink></li>
-                    <li><NavLink to={'/dashboard/myCampaigns'}>My campaigns</NavLink></li>
-                    <li><NavLink to={'/dashboard/myDonation'}>My Donations</NavLink></li>
-                    <li><NavLink to={'/dashboard/allUsers'}>All Users</NavLink></li>
-                    <li><NavLink to={'/dashboard/allPet'}>All Pets</NavLink></li>
-                    <li><NavLink to={'/dashboard/allDonation'}>All Donation</NavLink></li>
+                             <li className="text-white font-semibold"><NavLink to={'/dashboard/adminHome'}>Admin Home</NavLink></li>
+                    <li className="text-white font-semibold"><NavLink to={'/dashboard/addPet'}>Add a Pet</NavLink></li>
+                    <li className="text-white font-semibold"><NavLink to={'/dashboard/myAddedPets'}>My Added Pets</NavLink></li>
+                    <li className="text-white font-semibold"><NavLink to={'/dashboard/createCampaign'}>Create campaigns</NavLink></li>
+                    <li className="text-white font-semibold"><NavLink to={'/dashboard/myCampaigns'}>All campaigns</NavLink></li>
+                    <li className="text-white font-semibold"><NavLink to={'/dashboard/myDonation'}>My Donations</NavLink></li>
+                    <li className="text-white font-semibold"><NavLink to={'/dashboard/allUsers'}>All Users</NavLink></li>
+                    <li className="text-white font-semibold"><NavLink to={'/dashboard/allPet'}>All Pets</NavLink></li>
+                    <li className="text-white font-semibold"><NavLink to={'/dashboard/allDonation'}>All Donation</NavLink></li> 
+                    <div className="text-white h-[1px] bg-white w-full"></div>
+                    <li className="text-white font-semibold"><NavLink to={'/'}>Home</NavLink></li>
                         </>
                          :
                          <>
-                               <li className="bg-blue-500"><NavLink to={'/'}>User Home</NavLink></li>
-                    <li><NavLink to={'/dashboard/addPet'}>Add a Pet</NavLink></li>
-                    <li><NavLink to={'/dashboard/myAddedPets'}>My Added Pets</NavLink></li>
-                    <li><NavLink to={'/dashboard/createCampaign'}>Create campaigns</NavLink></li>
-                    <li><NavLink to={'/dashboard/myCampaigns'}>My campaigns</NavLink></li>
-                    <li><NavLink to={'/dashboard/myDonation'}>My Donations</NavLink></li>
+                               <li className="text-white font-semibold"><NavLink to={'/dashboard/userHome'}>User Home</NavLink></li>
+                    <li className="text-white font-semibold"><NavLink to={'/dashboard/addPet'}>Add a Pet</NavLink></li>
+                    <li className="text-white font-semibold"><NavLink to={'/dashboard/myAddedPets'}>My Added Pets</NavLink></li>
+                    <li className="text-white font-semibold"><NavLink to={'/dashboard/createCampaign'}>Create campaigns</NavLink></li>
+                    <li className="text-white font-semibold"><NavLink to={'/dashboard/myCampaigns'}>My campaigns</NavLink></li>
+                    <li className="text-white font-semibold"><NavLink to={'/dashboard/myDonation'}>My Donations</NavLink></li>
+                    <div className="text-white h-[1px] bg-white w-full"></div>
+                    <li className="text-white font-semibold"><NavLink to={'/'}>Home</NavLink></li>
                          </>
                      }
                

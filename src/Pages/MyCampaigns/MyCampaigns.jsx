@@ -4,14 +4,16 @@ import { FaRegEdit } from "react-icons/fa";
 import { IoIosPause } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import useAuth from "../../Hooks/useAuth";
 
 const MyCampaigns = () => {
+     const {user} = useAuth();
     const axiosSecure = useAxiosSecure();
     const [selectedCampaign, setSelectedCampaign] = useState(null)
     const {data: campaigns = []} = useQuery({
         queryKey: ["campaigns"],
         queryFn: async () => {
-            const res = await axiosSecure.get('/campaigns');
+            const res = await axiosSecure.get(`/campaigns`);
             return res.data
         }
     })
@@ -33,7 +35,7 @@ const MyCampaigns = () => {
     }
     
     return (
-        <div className="border border-black">
+        <div className="">
             <h3 className="text-3xl font-bold text-center">My Campaigns</h3>
             <div className="overflow-x-auto">
   <table className="table">
@@ -51,13 +53,13 @@ const MyCampaigns = () => {
          {
            campaigns.map((campaign, index) =>  <tr key={campaign?._id}>
            <th>{index + 1}</th>
-           <td>{campaign?.petName}</td>
-           <td>$ {campaign?.maxAmount}</td>
+           <td className="font-semibold">{campaign?.petName}</td>
+           <td className="font-semibold">$ {campaign?.maxAmount}</td>
            <td><progress className="progress progress-success w-56" value="40" max="100"></progress></td>
 
            <td className="flex gap-2">
                 <Link to={`/dashboard/updateCampaign/${campaign?._id}`}><FaRegEdit className="text-2xl"/></Link>
-                <IoIosPause className="text-2xl" />
+                {/* <IoIosPause className="text-2xl" /> */}
            </td>
            <td>
                <div className="badge badge-secondary badge-outline" onClick={() => handleViewDonators(campaign?._id)}>View Donators</div>
@@ -83,7 +85,7 @@ const MyCampaigns = () => {
       {
         donations.map((donation, index) =>   <tr key={donation._id}>
           <th>{index + 1}</th>
-          <td>{donation?.donoarName}</td>
+          <td className="">{donation?.donoarName}</td>
           <td>{donation?.donorEmail}</td>
           <td>$ {donation?.donatedAmount}</td>
           <td>$ {donation?.transId}</td>

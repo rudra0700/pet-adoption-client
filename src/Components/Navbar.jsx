@@ -38,16 +38,10 @@ const Navbar = () => {
       </div>
       <ul
         tabIndex={0}
-        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-        <li><a>Item 1</a></li>
-        <li>
-          <a>Parent</a>
-          <ul className="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </li>
-        <li><a>Item 3</a></li>
+        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow space-y-3">
+          <Link className='font-semibold'><li>Home</li></Link>
+        <Link className='font-semibold' to={'/allPets'}><li>All Pets</li></Link>
+        <Link className='font-semibold' to={'/allCampaigns'}><li>Campaigns</li></Link>
       </ul>
     </div>
      <div className='flex gap-0'>
@@ -65,7 +59,6 @@ const Navbar = () => {
   <div className="navbar-end">
       {/* image */}
         {!user && <Link to={'/login'} className='mr-3 font-semibold text-lg'>Login</Link>}
-        {/* <Link to={'/login'} className='mr-3 font-semibold text-lg'>Login</Link> */}
          {user &&   <div className="dropdown dropdown-end">
       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
         <div className="w-10 rounded-full">

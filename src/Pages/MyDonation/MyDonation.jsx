@@ -21,21 +21,21 @@ const MyDonation = () => {
 
     const handleRefund = (id) => {
         Swal.fire({
-            title: "Are you sure?",
+            title: "Are you sure to refund?",
             text: "You won't be able to revert this!",
             icon: "warning",
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, delete it!"
+            confirmButtonText: "Yes!"
           }).then(async (result) => {
             if (result.isConfirmed) {
                 try {
                     await axiosSecure.delete(`/refund/${id}`);
                     refetch();
                          Swal.fire({
-                title: "Deleted!",
-                text: "Your file has been deleted.",
+                title: "",
+                text: "Refund successful.",
                 icon: "success"
               });
                 } catch (error) {
@@ -54,9 +54,7 @@ const MyDonation = () => {
     <thead>
       <tr>
         <th>
-          <label>
-            <input type="checkbox" className="checkbox" />
-          </label>
+           Serial
         </th>
         <th>Image</th>
         <th>Pet Name</th>
@@ -82,10 +80,10 @@ const MyDonation = () => {
                     </div>
                   </div>
                 </td>
-                <td>
+                <td className='font-semibold'>
                   {donation?.petName}
                 </td>
-                <td>$ {donation?.donatedAmount}</td>
+                <td className='font-semibold'>$ {donation?.donatedAmount}</td>
                 <th>
                    <div className="badge badge-secondary badge-outline" onClick={() => handleRefund(donation?._id)}>Refund</div>
                 </th>

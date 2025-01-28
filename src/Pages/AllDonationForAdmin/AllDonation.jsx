@@ -80,10 +80,10 @@ const AllDonation = () => {
                       </div>
                     </div>
                   </td>
-                  <td>
+                  <td className="font-semibold">
                      $ {campaign?.maxAmount}
                   </td>
-                  <td>{format(new Date(campaign?.deadline), "P")}</td>
+                  <td className="font-semibold">{format(new Date(campaign?.deadline), "P")}</td>
                   
                   <th className="flex gap-3">
                     <Link to={`/dashboard/updateCampaign/${campaign?._id}`}><FaRegEdit className="text-2xl"/></Link>

@@ -15,22 +15,16 @@ const PetCard = ({pet}) => {
             <div className="card-body">
                 <h2 className="card-title">
                  {petName}
-                <div className="badge badge-secondary">{category}</div>
+                <div className="badge badge-secondary bg-neutral border-none">{category}</div>
                 </h2>
-                 <p className="mb-0">Age: {petAge}</p>
-                 <p className="mb-0">Publish Date: {format(new Date(deadline), "P")}</p>
+                 <p className="mb-0 opacity-70 font-semibold">Age: {petAge}</p>
+                 <p className="mb-0 opacity-70 font-semibold">Publish Date: {format(new Date(deadline), "P")}</p>
                  <div className="flex items-center mt-0">
-                    <p>Owner: {ownerName}</p>
-                     {/* owner img */}
-                     <div className="avatar">
-                        <div className="w-12 rounded-full">
-                        <img src={ownerImg} />
-                        </div>
-                    </div>
+                    <p className='opacity-70 font-semibold'>Owner: {ownerName}</p>
                  </div>
-                 <p className="">Description: {shortDesc}</p>
+                 <p className="opacity-70 font-semibold">Description: {shortDesc}</p>
                 <div className="card-actions justify-end">
-                   <Link className="badge badge-outline" to={`/petDetails/${_id}`}>View Details</Link>
+                   <Link className="badge badge-outline opacity-70 font-semibold" to={`/petDetails/${_id}`}>View Details</Link>
                 </div>
             </div>
             </div>

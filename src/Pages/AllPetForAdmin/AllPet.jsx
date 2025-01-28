@@ -112,11 +112,11 @@ const AllPet = () => {
                     </div>
                   </div>
                 </td>
-                <td>
+                <td className="font-semibold">
                    {pet?.ownerEmail}
                 </td>
-                <td>{pet?.ownerLocation}</td>
-                <td>{pet?.adopted === true ? "Adopted" : "Note Adopted"}</td>
+                <td className="font-semibold">{pet?.ownerLocation}</td>
+                <td className="font-semibold">{pet?.adopted === true ? "Adopted" : "Note Adopted"}</td>
                 <th className="flex gap-3">
                     <Link to={`/dashboard/updatePet/${pet?._id}`}><FaRegEdit className="text-2xl"/></Link>
                     <MdOutlineDelete className="text-2xl" onClick={() => handleDelete(pet?._id)} />

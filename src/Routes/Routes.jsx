@@ -22,11 +22,13 @@ import UserHome from "../Pages/UserHome/UserHome";
 import AdminHome from "../Pages/AdminHome/AdminHome";
 import AllPet from "../Pages/AllPetForAdmin/AllPet";
 import AllDonation from "../Pages/AllDonationForAdmin/AllDonation";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 const routes = createBrowserRouter([
     {
         path: '/',
         element: <MainLayout></MainLayout>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
@@ -54,7 +56,7 @@ const routes = createBrowserRouter([
             },
             {
                 path: '/donationDetails/:id',
-                element: <DonationDetails></DonationDetails>
+                element: <PrivateRoute><DonationDetails></DonationDetails></PrivateRoute>
             }
         ]
     },

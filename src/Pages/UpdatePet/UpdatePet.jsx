@@ -61,19 +61,19 @@ const UpdatePet = () => {
            }
      
     return (
-        <div className="border border-black">
+        <div className="px-8">
             <h3 className="text-3xl font-bold text-center">Want to Update?</h3>
                 <form onSubmit={handleSubmit(onSubmit)} className="mt-5">
                                 <div className="flex gap-4">
                                      <div className="form-control w-full">
                                          <label className="label">
-                                             <span className="label-text">Pet Name</span>
+                                             <span className="label-text font-semibold">Pet Name</span>
                                          </label>
                                          <input type="text" defaultValue={petName} placeholder="name" {...register('name', { required: true })}  className="input input-bordered" required/>
                                      </div>  
                                        <div className="form-control w-full">
                                          <label className="label">
-                                             <span className="label-text">Pet Age</span>
+                                             <span className="label-text font-semibold">Pet Age</span>
                                          </label>
                                          <input type="number" defaultValue={petAge} placeholder="age" {...register('age', { required: true })}  className="input input-bordered" required/>
                                      </div>
@@ -82,7 +82,7 @@ const UpdatePet = () => {
                                 <div className="flex gap-4">
                                      <div className="form-control w-full">
                                          <label className="label">
-                                             <span className="label-text">Pet Category</span>
+                                             <span className="label-text font-semibold">Pet Category</span>
                                          </label>
                                          <select defaultValue={category} className="select select-bordered" {...register('category', { required: true })} required>
                                              <option disabled value="default">Category</option>
@@ -97,7 +97,7 @@ const UpdatePet = () => {
                                      </div>  
                                        <div className="form-control w-full">
                                          <label className="label">
-                                             <span className="label-text">Location</span>
+                                             <span className="label-text font-semibold">Location</span>
                                          </label>
                                          <input type="text" defaultValue={ownerLocation} placeholder="location" {...register('location', { required: true })}  className="input input-bordered" required/>
                                      </div>
@@ -105,13 +105,13 @@ const UpdatePet = () => {
                                  <div className="flex gap-4">
                                      <div className="form-control w-full">
                                          <label className="label">
-                                             <span className="label-text">Pet Image</span>
+                                             <span className="label-text font-semibold">Pet Image</span>
                                          </label>
                                          <input type="file" placeholder="name" {...register('image', { required: true })}  className="input" required/>
                                      </div> 
                                         <div className="form-control w-full">
                                          <label className="label">
-                                             <span className="label-text">Date</span>
+                                             <span className="label-text font-semibold">Date</span>
                                          </label>
                                          <DatePicker  className='border p-2 rounded-md w-full' defaultValue={deadline} selected={startDate} onChange={(date) => setStartDate(date)} />
                                      </div> 
@@ -120,14 +120,14 @@ const UpdatePet = () => {
                                 </div>
                                      <div className="form-control w-full">
                                          <label className="label">
-                                             <span className="label-text">Short Desc</span>
+                                             <span className="label-text font-semibold">Short Description</span>
                                          </label>
                                          <input type="text" defaultValue={shortDesc} placeholder="aboutPet" {...register('shortDesc', { required: true })}  className="input input-bordered" required/>
                                      </div>
              
                                      <div className="form-control w-full">
                                          <label className="label">
-                                             <span className="label-text">Description</span>
+                                             <span className="label-text font-semibold">Write about your pet</span>
                                          </label>
                                          <textarea
                                          defaultValue={longDesc}

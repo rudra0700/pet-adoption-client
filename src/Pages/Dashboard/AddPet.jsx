@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { useNavigate } from "react-router-dom";
 
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
@@ -14,7 +15,8 @@ const AddPet = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const axiosSecure = useAxiosSecure();
     const axiosPublic = useAxiosPublic();
-    const {user} = useAuth()
+    const {user} = useAuth();
+    const navigate = useNavigate()
 
       const onSubmit = async (data) => {
         console.log(data);
@@ -43,6 +45,7 @@ const AddPet = () => {
             console.log(petInfo);
             await axiosSecure.post('/pets', petInfo);
             toast.success("Added pet successfully");
+            navigate('/dashboard/myAddedPets')
         } catch (error) {
             console.log(error);
         }
@@ -50,18 +53,18 @@ const AddPet = () => {
 
     return (
         <div className="px-8">
-            <h2 className="text-3xl font-semibold text-center">Add Your Pet</h2>
+            <h2 className="text-3xl font-semibold text-center mb-3">Add Your Pet</h2>
              <form onSubmit={handleSubmit(onSubmit)}>
                    <div className="flex gap-4">
                         <div className="form-control w-full">
                             <label className="label">
-                                <span className="label-text">Pet Name</span>
+                                <span className="label-text font-semibold">Pet Name</span>
                             </label>
                             <input type="text" placeholder="name" {...register('name', { required: true })}  className="input input-bordered" required/>
                         </div>  
                           <div className="form-control w-full">
                             <label className="label">
-                                <span className="label-text">Pet Age</span>
+                                <span className="label-text font-semibold">Pet Age</span>
                             </label>
                             <input type="number" placeholder="age" {...register('age', { required: true })}  className="input input-bordered" required/>
                         </div>
@@ -70,7 +73,7 @@ const AddPet = () => {
                    <div className="flex gap-4">
                         <div className="form-control w-full">
                             <label className="label">
-                                <span className="label-text">Pet Category</span>
+                                <span className="label-text font-semibold">Pet Category</span>
                             </label>
                             <select defaultValue="default" className="select select-bordered" {...register('category', { required: true })} required>
                                 <option disabled value="default">Category</option>
@@ -85,7 +88,7 @@ const AddPet = () => {
                         </div>  
                           <div className="form-control w-full">
                             <label className="label">
-                                <span className="label-text">Location</span>
+                                <span className="label-text font-semibold">Location</span>
                             </label>
                             <input type="text" placeholder="location" {...register('location', { required: true })}  className="input input-bordered" required/>
                         </div>
@@ -93,13 +96,13 @@ const AddPet = () => {
                     <div className="flex gap-4">
                         <div className="form-control w-full">
                             <label className="label">
-                                <span className="label-text">Pet Image</span>
+                                <span className="label-text font-semibold">Pet Image</span>
                             </label>
                             <input type="file" placeholder="name" {...register('image', { required: true })}  className="input" required/>
                         </div> 
                            <div className="form-control w-full">
                             <label className="label">
-                                <span className="label-text">Date</span>
+                                <span className="label-text font-semibold">Date</span>
                             </label>
                             <DatePicker  className='border p-2 rounded-md w-full' selected={startDate} onChange={(date) => setStartDate(date)} />
                         </div> 
@@ -108,14 +111,14 @@ const AddPet = () => {
                    </div>
                         <div className="form-control w-full">
                             <label className="label">
-                                <span className="label-text">Short Desc</span>
+                                <span className="label-text font-semibold">Short Description</span>
                             </label>
                             <input type="text" placeholder="aboutPet" {...register('shortDesc', { required: true })}  className="input input-bordered" required/>
                         </div>
 
                         <div className="form-control w-full">
                             <label className="label">
-                                <span className="label-text">Description</span>
+                                <span className="label-text font-semibold">Write details about your pet</span>
                             </label>
                             <textarea
                              {...register('longDesc', { required: true })} 

@@ -7,7 +7,9 @@ const UserHome = () => {
         <div>
             <h2 className='text-3xl'>
                 <span>Hi! Welcome</span>
-                {user?.displayName ? user?.displayName : "Back"}
+                <span className='ml-3'>
+                     {user?.displayName ? user?.displayName : "Back"}
+                </span>
             </h2>
         </div>
     );

@@ -42,7 +42,6 @@ const Register = () => {
          }
     };
     
-    // console.log(watch("example")); 
 
     const handleGoogleSignIn =  () => {
        googleSignIn()

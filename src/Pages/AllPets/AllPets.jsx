@@ -5,7 +5,6 @@ import PetCard from "../../Components/PetCard";
 
 
 const AllPets = () => {
-    // const [jobs, setJobs] = useState([]);
     const [filter, setFilter] = useState('');
     const [search, setSearch] = useState('');
     const [sort, setSort] = useState('');
@@ -18,7 +17,7 @@ const AllPets = () => {
        }
     })
     console.log(pets);
-    if(isLoading) return <p>Loading...</p>
+    // if(isLoading) return <p>Loading...</p>
 
     const handleReset = () => {
         setFilter('')
@@ -56,8 +55,8 @@ const AllPets = () => {
                   type='text'
                   name='search'
                   onChange={(e) => setSearch(e.target.value)}
-                  placeholder='Enter Job Title'
-                  aria-label='Enter Job Title'
+                  placeholder='Search by category'
+                  aria-label=''
                   value={search}
                 />
   
