@@ -26,11 +26,11 @@ const PetDetails = () => {
 
      const {category, deadline, image, longDesc, ownerImg, ownerEmail, ownerLocation, ownerName, petAge, petName, _id} = pet || {};
 
-     const closeModal = () => {
-       closeModal()
-     }
+    //  const closeModal = () => {
+    //    closeModal()
+    //  }
 
-   
+      if(isLoding) return <p>Loading</p>
      console.log(pet);
         const adoptInfo = {
             userEmail: user?.email,

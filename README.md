@@ -1,8 +1,39 @@
-# React + Vite
+# Project Name: PetHouse
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Purpose :
+The purpose of this pet adoption website is to create a platform where users can find loving homes for pets like dogs, cats, and rabbits. It aims to simplify the adoption process, connecting potential pet parents with pets in need. Additionally, the platform empowers users to create donation campaigns to support animals requiring care, medical treatment, or shelter. Visitors can also donate to existing campaigns, contributing to the well-being of pets and the organizations caring for them. This website fosters a community of animal lovers, promoting kindness and responsibility while ensuring pets find safe, nurturing homes. It’s a step toward reducing stray populations and enhancing animal welfare worldwide.
 
-Currently, two official plugins are available:
+# Some key Feature: 
+- Use mongoDb database for handling  database
+- CRUD operation for handling pets, donation, and user  collection
+- User can adopt pet and donate for other pet using any international card
+- Search and filter and reset option
+- Authenticaton Using firebase
+- Implement Private route system
+- Implement Admin route system
+- Admin can access all the route of any normal user
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# npm  pakage: 
+- react-router-dom
+- react-toastify
+- react helmet
+- react-icons
+- react date-fns
+- firebase
+- axios
+- swiper js
+- react-date-picker
+- lottie-react
+- stripe 
+- react date picker
+- sweetAlert2
+- react hook form
+- react helmet
+
+Github link :
+
+- client side :  https://github.com/programming-hero-web-course2/b10a11-client-side-rudra0700
+
+- server side : https://github.com/Programming-Hero-Web-Course4/b10a12-server-side-rudra0700
+
+Live url : https://pethouse-20e61.web.app

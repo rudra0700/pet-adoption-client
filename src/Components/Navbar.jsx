@@ -3,9 +3,11 @@ import petlogo from '/public/pet logo.jpg'
 import { RiLogoutBoxLine } from "react-icons/ri";
 import useAuth from '../Hooks/useAuth';
 import { toast } from 'react-toastify';
+import useAdmin from '../Hooks/useAdmin';
 
 const Navbar = () => {
   const {user, logoutUser} = useAuth();
+  const [isAdmin] = useAdmin();
   const navigate = useNavigate()
    
   const handleLogout = () => {
@@ -76,7 +78,15 @@ const Navbar = () => {
       <ul
         tabIndex={0}
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow space-y-3 font-semibold">
-         <Link to={'/dashboard'}><li>Dashboard</li></Link>
+           
+          {
+            user && isAdmin &&  <Link to={'/dashboard/adminHome'}><li>Dashboard</li></Link>
+          } 
+            {
+            user && !isAdmin &&  <Link to={'/dashboard/userHome'}><li>Dashboard</li></Link>
+          }
+         {/* <Link to={'/dashboard'}><li>Dashboard</li></Link> */}
+        
          <Link onClick={handleLogout} className='flex items-center space-x-2'><li>Logout</li><RiLogoutBoxLine /></Link>
       </ul>
     </div>}

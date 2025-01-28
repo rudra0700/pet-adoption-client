@@ -5,12 +5,12 @@ import PetCard from "../../Components/PetCard";
 
 
 const AllPets = () => {
-    const [jobs, setJobs] = useState([]);
+    // const [jobs, setJobs] = useState([]);
     const [filter, setFilter] = useState('');
     const [search, setSearch] = useState('');
     const [sort, setSort] = useState('');
      const axiosPublic = useAxiosPublic()
-    const {data: pets = []} = useQuery({
+    const {data: pets = [], isLoading} = useQuery({
        queryKey: ["pets", filter, search, sort],
        queryFn: async () => {
          const res = await axiosPublic.get(`/pets?filter=${filter}&search=${search}&sort=${sort}`);
@@ -18,6 +18,7 @@ const AllPets = () => {
        }
     })
     console.log(pets);
+    if(isLoading) return <p>Loading...</p>
 
     const handleReset = () => {
         setFilter('')

@@ -49,9 +49,9 @@ const AllUsers = () => {
     {/* head */}
     <thead>
       <tr>
-        <th>
+        {/* <th>
            serial
-        </th>
+        </th> */}
         <th>Image</th>
         <th>Name</th>
         <th>Favorite Color</th>
@@ -62,11 +62,9 @@ const AllUsers = () => {
     <tbody>
         {
             users.map((user, index) =>  <tr key={user?._id}>
-            <th>
-              <label>
-                <input type="checkbox" className="checkbox" />
-              </label>
-            </th>
+            {/* <th>
+                {index + 1}
+            </th> */}
             <td>
               <div className="flex items-center gap-3">
                 <div className="avatar">

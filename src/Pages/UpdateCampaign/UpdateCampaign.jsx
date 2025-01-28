@@ -40,7 +40,7 @@ const UpdateCampaign = () => {
                     longDesc: data?.longDesc,
                 };
                 
-                await axiosSecure.put(`/campaign/${id}`, campaignInfo);
+                await axiosSecure.patch(`/campaign/${id}`, campaignInfo);
                 toast.success("campaign updated successfully")
             } catch (error) {
                 console.log(error);
@@ -65,7 +65,7 @@ const UpdateCampaign = () => {
                                          <label className="label">
                                              <span className="label-text">Pet image</span>
                                          </label>
-                                         <input type="file" placeholder="image" {...register('image', { required: true })}  className="input border-none outline-none"/>
+                                         <input type="file" placeholder="image" {...register('image', { required: true })}  className="input border-none outline-none" required/>
                                      </div>  
                                    
                                 </div>    

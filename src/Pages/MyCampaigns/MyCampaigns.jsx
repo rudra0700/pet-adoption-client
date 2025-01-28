@@ -31,9 +31,7 @@ const MyCampaigns = () => {
       setSelectedCampaign(id)
       document.getElementById("my_modal_4").showModal();
     }
-
-   
-
+    
     return (
         <div className="border border-black">
             <h3 className="text-3xl font-bold text-center">My Campaigns</h3>
