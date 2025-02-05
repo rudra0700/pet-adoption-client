@@ -19,7 +19,7 @@ const AddPet = () => {
     const navigate = useNavigate()
 
       const onSubmit = async (data) => {
-        console.log(data);
+    
         const imageFile = {image: data.image[0]}
         try {
             const res = await axiosPublic.post(image_hosting_api, imageFile, {
@@ -27,7 +27,7 @@ const AddPet = () => {
                     'content-type': 'multipart/form-data'
                 }
             })
-            console.log(res.data);
+    
             const petInfo = {
                 petName: data?.name,
                 petAge: data?.age,
@@ -42,12 +42,12 @@ const AddPet = () => {
                 deadline: startDate,
                 adopted: false
             }
-            console.log(petInfo);
+        
             await axiosSecure.post('/pets', petInfo);
             toast.success("Added pet successfully");
             navigate('/dashboard/myAddedPets')
         } catch (error) {
-            console.log(error);
+            // console.log(error);
         }
       }
 

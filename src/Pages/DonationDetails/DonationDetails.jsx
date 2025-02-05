@@ -57,8 +57,7 @@ const DonationDetails = () => {
     }
 
     if(isLoading) return <p>Loading...</p>
-    console.log(campaign);
-    console.log(amount);
+ 
 
  
     return (

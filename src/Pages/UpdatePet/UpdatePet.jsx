@@ -28,7 +28,7 @@ const UpdatePet = () => {
     const {category, deadline, longDesc, petAge, petName,  shortDesc, ownerLocation} = pet;
     const [startDate, setStartDate] = useState(deadline)
        const onSubmit = async (data) => {
-             console.log(data);
+
              const imageFile = {image: data.image[0]}
              try {
                  const res = await axiosPublic.post(image_hosting_api, imageFile, {
@@ -36,7 +36,7 @@ const UpdatePet = () => {
                          'content-type': 'multipart/form-data'
                      }
                  })
-                //  console.log(res.data);
+              
                  const petInfo = {
                      petName: data?.name,
                      petAge: data?.age,
@@ -51,12 +51,12 @@ const UpdatePet = () => {
                      deadline: startDate,
                      adopted: false
                  }
-                 console.log(petInfo);
+              
                  await axiosSecure.put(`/pet/${id}`, petInfo);
                  toast.success("updated pet details successfully");
                  navigate('/dashboard/myAddedPets')
              } catch (error) {
-                 console.log(error);
+                //  console.log(error);
              }
            }
      

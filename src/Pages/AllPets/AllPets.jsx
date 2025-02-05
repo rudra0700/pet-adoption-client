@@ -16,7 +16,7 @@ const AllPets = () => {
          return res.data
        }
     })
-    console.log(pets);
+
     // if(isLoading) return <p>Loading...</p>
 
     const handleReset = () => {

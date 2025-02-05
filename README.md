@@ -1,6 +1,6 @@
 # Project Name: PetHouse
 
-# Purpose :
+# Project Overview :
 The purpose of this pet adoption website is to create a platform where users can find loving homes for pets like dogs, cats, and rabbits. It aims to simplify the adoption process, connecting potential pet parents with pets in need. Additionally, the platform empowers users to create donation campaigns to support animals requiring care, medical treatment, or shelter. Visitors can also donate to existing campaigns, contributing to the well-being of pets and the organizations caring for them. This website fosters a community of animal lovers, promoting kindness and responsibility while ensuring pets find safe, nurturing homes. It’s a step toward reducing stray populations and enhancing animal welfare worldwide.
 
 # Some key Feature: 
@@ -13,6 +13,12 @@ The purpose of this pet adoption website is to create a platform where users can
 - Implement Admin route system
 - Admin can access all the route of any normal user
 
+# Technology Stack: 
+ - Programming language : Javascript
+ - Framework : react.js, express.js
+ - Database : Mongodb
+ - Authentication: JSON Web Token (JWT)
+ - Baas : firebase
 # npm  pakage: 
 - react-router-dom
 - react-toastify
@@ -29,6 +35,10 @@ The purpose of this pet adoption website is to create a platform where users can
 - sweetAlert2
 - react hook form
 - react helmet
+
+# Admin Credential: 
+ - Email: durjoy@gmail.com
+ - Password : 123456Aa#
 
 Github link :
 

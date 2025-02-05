@@ -28,7 +28,7 @@ const PetDetails = () => {
 
 
       if(isLoading) return <p>Loading</p>
-     console.log(pet);
+ 
         const adoptInfo = {
             userEmail: user?.email,
             userName: user?.displayName,
@@ -49,7 +49,7 @@ const PetDetails = () => {
             navigate('/allPets');
             toast.success("Adopted successfully")
         } catch (error) {
-           console.log(error); 
+        //    console.log(error); 
         }
      }
 

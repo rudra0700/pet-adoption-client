@@ -30,7 +30,7 @@ const UpdateCampaign = () => {
                         'content-type': 'multipart/form-data'
                     }
                 })
-                console.log(res.data);
+             
                 const campaignInfo = {
                     petName: data?.name,
                     image: res.data?.data?.display_url,
@@ -43,7 +43,7 @@ const UpdateCampaign = () => {
                 await axiosSecure.patch(`/campaign/${id}`, campaignInfo);
                 toast.success("campaign updated successfully")
             } catch (error) {
-                console.log(error);
+                // console.log(error);
             }
         }
         

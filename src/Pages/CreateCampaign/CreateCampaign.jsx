@@ -25,7 +25,7 @@ const CreateCampaign = () => {
                     'content-type': 'multipart/form-data'
                 }
             })
-            console.log(res.data);
+ 
             const campaignInfo = {
                 petName: data?.name,
                 image: res.data?.data?.display_url,
@@ -42,7 +42,7 @@ const CreateCampaign = () => {
            toast.success("campaigns added successfully");
             navigate('/dashboard/myCampaigns')
         } catch (error) {
-            console.log(error);
+            // console.log(error);
         }
       }
     return (

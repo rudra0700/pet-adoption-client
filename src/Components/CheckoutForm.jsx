@@ -19,16 +19,13 @@ const CheckoutForm = ({campaignInfo, refetch, maxAmount}) => {
        try {
         if(campaignInfo?.donatedAmount > 0){
           const {data} = await axiosSecure.post('/create-payment-intent', {amount: campaignInfo?.donatedAmount,campaign_Id: campaignInfo?.campaign_Id});
-          console.log(data);
           setClientSecret(data.clientSecret)
         }
        } catch (error) {
-        console.log(error);
        }
     }
 
-    console.log(campaignInfo);
-    console.log("client secret", clientSecret);
+ 
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -49,9 +46,9 @@ const CheckoutForm = ({campaignInfo, refetch, maxAmount}) => {
           }) 
 
           if(error){
-            console.log("payment error", error);
+         
           }else{
-            console.log("payment method", paymentMethod);
+            
          
           }
 
@@ -78,11 +75,11 @@ const CheckoutForm = ({campaignInfo, refetch, maxAmount}) => {
                 toast.success("Donate successfully");
                refetch()
              } catch (error) {
-              console.log(error);
+            
              }
           }
 
-          console.log(paymentIntent)
+          
     }
     return (
         <div>

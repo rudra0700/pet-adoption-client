@@ -16,7 +16,6 @@ const AllPet = () => {
         }
      })
 
-     console.log(pets);
 
      const handleStatusChange = (id) => {
         Swal.fire({
@@ -38,7 +37,7 @@ const AllPet = () => {
                         icon: "success"
                       });
                 } catch (error) {
-                   console.log(error); 
+                  //  console.log(error); 
                 }
           
             }
@@ -67,7 +66,7 @@ const AllPet = () => {
              });
                
              } catch (error) {
-               console.log(error);
+              //  console.log(error);
              }
           
            }

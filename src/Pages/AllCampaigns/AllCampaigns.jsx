@@ -8,7 +8,7 @@ const AllCampaigns = () => {
     const axiosPublic = useAxiosPublic()
     const [sort, setSort] = useState('');
     
-    console.log(sort);
+    // console.log(sort);
     const {data: campaigns = [], } = useQuery({
         queryKey: ["campaigns", sort],
         queryFn: async () => {
@@ -20,7 +20,7 @@ const AllCampaigns = () => {
     const handleReset = () => {
         setSort('')
        }
-    console.log(campaigns);
+    // console.log(campaigns);
     return (
         <div className='container px-6 py-10 mx-auto min-h-[calc(100vh-306px)] flex flex-col justify-between'>
         <div>

@@ -27,7 +27,7 @@ const MyCampaigns = () => {
     })
    
     if(isLoading) return <p>Loading...</p>
-    console.log(donations);
+
 
     const handleViewDonators = (id) => {
       setSelectedCampaign(id)

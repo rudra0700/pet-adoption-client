@@ -17,7 +17,6 @@ const AllDonation = () => {
     });
 
       const handleDelete = (id) => {
-        console.log(id);
              Swal.fire({
                title: "Are you sure?",
                text: "You won't be able to revert this!",
@@ -38,7 +37,7 @@ const AllDonation = () => {
                  });
                    
                  } catch (error) {
-                   console.log(error);
+                  //  console.log(error);
                  }
               
                }

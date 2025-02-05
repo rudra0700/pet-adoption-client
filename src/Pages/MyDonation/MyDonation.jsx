@@ -16,7 +16,6 @@ const MyDonation = () => {
     })
 
 
-    console.log(donations);
 
 
     const handleRefund = (id) => {
@@ -39,7 +38,7 @@ const MyDonation = () => {
                 icon: "success"
               });
                 } catch (error) {
-                    console.log(error);
+                    // console.log(error);
                 }
          
             }

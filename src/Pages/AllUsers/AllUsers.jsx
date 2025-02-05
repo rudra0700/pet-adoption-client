@@ -13,7 +13,7 @@ const AllUsers = () => {
         }
     })
 
-    console.log(users);
+
     const handleMakeAdmin = (id) => {
         Swal.fire({
             title: "Are you sure?",
@@ -35,7 +35,7 @@ const AllUsers = () => {
               });
                     
                 } catch (error) {
-                    console.log(error);
+                    // console.log(error);
                 }
             
             }

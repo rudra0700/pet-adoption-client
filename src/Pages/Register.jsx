@@ -18,7 +18,6 @@ const Register = () => {
     const axiosPublic = useAxiosPublic();
     const navigate = useNavigate()
     const onSubmit = async (data) => {
-        console.log(data);
         const imageFile = {image: data.image[0]}
          try {
             const res = await axiosPublic.post(image_hosting_api, imageFile, {
@@ -26,7 +25,6 @@ const Register = () => {
                     'content-type': 'multipart/form-data'
                 }
             })
-            console.log(res.data);
             const userInfo = {
                 name: data?.name,
                 email: data?.email,
@@ -38,7 +36,7 @@ const Register = () => {
             navigate('/')
             toast.success("Registered successfully")
          } catch (error) {
-            console.log(error);
+            // console.log(error);
          }
     };
     
